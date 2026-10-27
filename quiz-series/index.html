@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f5f3ed">
+  <meta name="description" content="Rick 学习卡片·教练知识题库系列。参考 NSCA-CPT、CSCS、ACE、NASM、ACSM 公开学习领域，60道原创题，练习、计时挑战、翻卡与错题复盘。">
+  <title>学习卡片 · 教练知识题库 | HERACLES LAB</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<a href="#content" class="skip">跳转到内容</a>
+<header class="topbar"><a href="../" class="brand"><span class="brand-mark">H<span>↗</span></span><span>HERACLES <b>LAB</b><small>RICK / COACH LEARNING</small></span></a><nav aria-label="主导航"><a href="../">训练挑战 ↗</a><a href="../session-card/">课前询问卡 ↗</a><button id="home-nav" class="nav-current">学习题库</button></nav></header>
+<main id="content" tabindex="-1"><div id="app"><p class="loading">正在整理你的学习卡片…</p></div><noscript><p>请启用 JavaScript 后使用交互题库。</p></noscript></main>
+<footer><span>HERACLES LAB · LEARN. APPLY. REPEAT.</span><span>原创练习 · 数据保存在当前浏览器</span></footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<dialog id="confirm-dialog" aria-labelledby="dialog-title"><h2 id="dialog-title">交卷并复盘？</h2><p id="dialog-body"></p><div class="actions"><button class="btn secondary" id="dialog-cancel">继续答题</button><button class="btn" id="dialog-ok">确认交卷</button></div></dialog>
+<script src="./questions.js"></script><script type="module" src="./app.mjs"></script>
+</body></html>
