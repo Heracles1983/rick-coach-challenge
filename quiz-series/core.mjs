@@ -3,6 +3,14 @@ export function shuffle(items, random = Math.random) {
   for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
   return a;
 }
+export function questionVolume(question) { return question.volume || 'vol1'; }
+export function selectQuestions(bank, volume, track = 'all') {
+  return bank.filter(q => questionVolume(q) === volume && (track === 'all' || q.track === track));
+}
+export function sessionVolume(session, bank) {
+  const volumes = new Set(session.ids.map(id => bank.find(q => q.id === id)).filter(Boolean).map(questionVolume));
+  return volumes.size === 1 ? [...volumes][0] : 'mixed';
+}
 export function createSession(ids, mode, title, now = Date.now()) {
   return {version: 1, ids: [...ids], mode, title, index: 0, answers: {}, checked: {}, flags: [], revealed: {}, viewed: {}, startedAt: now, deadline: mode === 'exam' ? now + ids.length * 45000 : null, finishedAt: null};
 }
